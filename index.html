@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Integrated Sistem Permantauan Aduan Agensi Awam (iSPAAA)</title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    <script src="js/ISPAAA.js"></script>
+    <link href="css/jquery.mobile-1.4.2.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script id="initialize">
+        $(function () {
+            $("body>[data-role='panel']").panel();
+        });
+    </script>
+</head>
+<body>
+    <div id="mainmenupanel" data-role="panel" data-position-fixed="true">
+        <ul data-role="listview">
+            <li><a href="#settings-profile">Profile</a></li>
+            <li><a href="#settings-appinfo">App Info</a></li>
+            <li><a href="#settings-legalinfo">Legal Info</a></li>
+            <li><a href="#settings-language">Language</a></li>
+        </ul>
+    </div>
+    <div id="messagingpanel" data-role="panel" data-position="right" data-position-fixed="true">
+        <ul data-role="listview">
+            <li><a href="#settings-profile">Profile</a></li>
+            <li><a href="#settings-appinfo">App Info</a></li>
+            <li><a href="#settings-legalinfo">Legal Info</a></li>
+            <li><a href="#settings-language">Language</a></li>
+        </ul>
+    </div>
+    <div id="nearby" data-role="page">
+        <!--This page allows users to view nearby Appeals geolocationally.-->
+        <h1>Nearby</h1>
+        <form id="nearby-toggleviews" action="#" method="get">
+            <!--This controlgroup allows users to switch between List View and Map View for ease of use.-->
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend></legend>
+                <input type="radio" name="list-view" id="nearby-listview" value="list-view" checked="checked" />
+                <label for="list-view">List View</label>
+                <input type="radio" name="map-view" id="nearby-mapview" value="map-view" />
+                <label for="map-view">Map View</label>
+            </fieldset>
+        </form>
+    </div>
+    <div id="newappeal" data-role="page">
+        <!--This page allows users to create new Appeals.-->
+        <h1>New Appeal</h1>
+    </div>
+    <div id="watchlist" data-role="page"></div>
+        <!--This page allows users to add Appeals to their own lists. All Appeals are publicly available to be seen.-->
+    <div id="settings" data-role="page">
+        <ul data-role="listview">
+            <li><a href="#settings-profile">Profile</a></li>
+            <li><a href="#settings-appinfo">App Info</a></li>
+            <li><a href="#settings-legalinfo">Legal Info</a></li>
+            <li><a href="#settings-userpref">User Preferences</a></li>
+        </ul>
+    </div>
+    <div id="settings-profile" data-role="page"></div>
+    <div id="settings-appinfo" data-role="page"></div>
+    <div id="settings-legalinfo" data-role="page"></div>
+    <div id="settings-language" data-role="page"></div>
+</body>
+</html>
