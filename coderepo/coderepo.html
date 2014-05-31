@@ -1,9 +1,175 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Integrated Sistem Permantauan Aduan Agensi Awam (iSPAAA)</title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    <script src="js/ISPAAA.js"></script>
+    <link href="css/jquery.mobile-1.4.2.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script id="initialize">
+        $(function () {
+            $("body>[data-role='panel']").panel();
+        });
+    </script>
 </head>
 <body>
-
+    <div data-role="panel" id="mainmenupanel" data-position-fixed="true">
+        <ul data-role="listview">
+            <li><a href="#newappeal">New Appeal</a></li>
+            <li><a href="#nearby">Nearby</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#watchlist">Watchlist</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+    </div>
+    <div data-role="panel" id="messagingpanel" data-position="right" data-position-fixed="true">
+        <ul data-role="listview">
+            <li>
+                <a onclick="goTo(messaging, musamansor)">
+                    <h1>DBKL Officer</h1>
+                    <p>Encik Musa Mansor</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="goTo(messaging, rosalinkumaran)">
+                    <h1>DBKL Officer</h1>
+                    <p>Puan Rosalin Kumaran</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="goTo(messaging, yongtaksee)">
+                    <h1>Selangor Resident</h1>
+                    <p>Puan Yong Tak See</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="goTo(messaging, cindytan)">
+                    <h1>Selangor Resident</h1>
+                    <p>Cik Cindy Tan</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="page" id="nearby">
+        <div class="ui-content" role="main">
+            <!--This page allows users to view nearby Appeals geolocationally.-->
+            <h1>Nearby</h1>
+            <form id="nearby-toggleviews">
+                <!--This controlgroup allows users to switch between List View and Map View for ease of use.-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <legend></legend>
+                    <input type="radio" name="view" id="nearby-radiolistview" value="list" checked="checked" />
+                    <label for="nearby-radiolistview">List View</label>
+                    <input type="radio" name="view" id="nearby-radiomapview" value="map" />
+                    <label for="nearby-radiomapview">Map View</label>
+                </fieldset>
+            </form>
+            <div id="nearby-listview-container"></div>
+            <ul data-role="listview" data-filter="true" data-inset="true">
+                <li>
+                    <a href="">
+                        <img class="listviewimg" src="http://wallpoper.com/images/00/24/73/09/meme-accepted_00247309.jpg" />
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <h1>Burst fire hydrant</h1>
+                                <p>Critical Urgency</p>
+                                <p>Mr. George Yong</p>
+                            </div>
+                            <div class="ui-block-b nearby-listview-grid-b">
+                                <h1>Open - Unattended</h1>
+                                <p>1 Jalan 17/21G, Petaling Jaya, Selangor</p>
+                                <p>11/05/2014 07:01</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img class="listviewimg" src="http://wallpaper.ultradownloads.com.br/276255_Papel-de-Parede-Meme-Obama-Not-Bad_1280x1024.jpg" />
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <h1>Potholes forming along Jalan Alor</h1>
+                                <p>Low Urgency</p>
+                                <p>Mrs. Candice Thiagarajah</p>
+                            </div>
+                            <div class="ui-block-b nearby-listview-grid-b">
+                                <h1>Open - Resolving</h1>
+                                <p>1 Jalan 17/21G, Petaling Jaya, Selangor</p>
+                                <p>08/05/2014 11:56</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img class="listviewimg" src="http://wallpoper.com/images/00/24/23/35/meme-white_00242335.jpg" />
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <h1>Need bank branches nearby</h1>
+                                <p>Medium Urgency</p>
+                                <p>Ms. Noraishah Ismail</p>
+                            </div>
+                            <div class="ui-block-b nearby-listview-grid-b">
+                                <h1>Resolved - Closed</h1>
+                                <p>1 Jalan 17/21G, Petaling Jaya, Selangor</p>
+                                <p>02/05/2014 18:13</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img class="listviewimg" src="http://us.cdn281.fansshare.com/photos/meme/papel-de-parede-meme-impossibru-597266142.jpg" />
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <h1>Tree blocking traffic lights</h1>
+                                <p>High Urgency</p>
+                                <p>Mr. Kohei Unase</p>
+                            </div>
+                            <div class="ui-block-b nearby-listview-grid-b">
+                                <h1>Resolving - Resolving</h1>
+                                <p>1 Jalan 17/21G, Petaling Jaya, Selangor</p>
+                                <p>02/05/2014 08:21</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="newappeal">
+        <div class="ui-content" role="main">
+            <!--This page allows users to create new Appeals.-->
+            <h1>New Appeal</h1>
+        </div>
+    </div>
+    <div data-role="page" id="watchlist">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <!--This page allows users to add Appeals to their own lists. All Appeals are publicly available to be seen.-->
+    <div data-role="page" id="settings">
+        <div class="ui-content" role="main">
+            <ul data-role="listview">
+                <li><a href="#settings-profile">Profile</a></li>
+                <li><a href="#settings-appinfo">App Info</a></li>
+                <li><a href="#settings-legalinfo">Legal Info</a></li>
+                <li><a href="#settings-userpref">User Preferences</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="settings-profile">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-appinfo">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-legalinfo">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-language">
+        <div class="ui-content" role="main"></div>
+    </div>
 </body>
 </html>
