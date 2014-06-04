@@ -3,6 +3,7 @@
 <head>
     <title>Integrated Sistem Permantauan Aduan Agensi Awam (iSPAAA)</title>
     <meta charset="utf-8" />
+    <meta name="viewport"  />
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/jquery.mobile-1.4.2.js"></script>
     <script src="js/ISPAAA.js"></script>
@@ -20,12 +21,20 @@
             <li><a href="#settings">Settings</a></li>
         </ul>
     </div>
-    <div data-role="panel" id="right-panel" data-position-fixed="true" data-position="right"></div>
+    <div data-role="panel" id="right-panel" data-position-fixed="true" data-position="right" data-display="push">
+        <h1>Messaging</h1>
+    </div>
     <!-- /PANELS -->
     <!-- PAGES -->
-    <div data-role="page" id="nearby"></div>
-    <div data-role="page" id="newappeal"></div>
-    <div data-role="page" id="watchlist"></div>
+    <div data-role="page" id="nearby">
+        <h1>Nearby</h1>
+    </div>
+    <div data-role="page" id="newappeal">
+        <h1>New Appeal</h1>
+    </div>
+    <div data-role="page" id="watchlist">
+        <h1>Watchlist</h1>
+    </div>
     <div data-role="page" id="settings">
         <div class="ui-content" role="main">
             <ul data-role="listview">

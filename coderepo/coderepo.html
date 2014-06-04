@@ -173,3 +173,66 @@
     </div>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Integrated Sistem Permantauan Aduan Agensi Awam (iSPAAA)</title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    <script src="js/ISPAAA.js"></script>
+    <link href="css/jquery.mobile-1.4.2.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- PANELS -->
+    <div data-role="panel" id="left-panel" data-position-fixed="true">
+        <ul data-role="listview">
+            <li><a href="#newappeal">New Appeal</a></li>
+            <li><a href="#nearby">Nearby</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#watchlist">Watchlist</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+    </div>
+    <div data-role="panel" id="right-panel" data-position-fixed="true" data-position="right" data-display="push">
+        <h1>Messaging</h1>
+    </div>
+    <!-- /PANELS -->
+    <!-- PAGES -->
+    <div data-role="page" id="nearby">
+        <h1>Nearby</h1>
+    </div>
+    <div data-role="page" id="newappeal">
+        <h1>New Appeal</h1>
+    </div>
+    <div data-role="page" id="watchlist">
+        <h1>Watchlist</h1>
+    </div>
+    <div data-role="page" id="settings">
+        <div class="ui-content" role="main">
+            <ul data-role="listview">
+                <li><a href="#settings-profile">Profile</a></li>
+                <li><a href="#settings-appinfo">App Info</a></li>
+                <li><a href="#settings-legalinfo">Legal Info</a></li>
+                <li><a href="#settings-userpref">User Preferences</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="settings-profile">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-appinfo">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-legalinfo">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <div data-role="page" id="settings-language">
+        <div class="ui-content" role="main"></div>
+    </div>
+    <!-- /PAGES -->
+</body>
+</html>
+
