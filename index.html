@@ -12,32 +12,65 @@
 </head>
 <body>
     <!-- PANELS -->
-    <div data-role="panel" id="left-panel" data-position-fixed="true">
+    <div data-role="panel" id="left-panel" data-position-fixed="true" data-display="push" data-theme="b">
+        <div id="mainmenu-header">
+            <a id="mainmenu-header-profile" href="#settings-profile">
+                <div>
+                    <p>George Yong</p>
+                </div>
+            </a>
+        </div>
         <ul data-role="listview">
+            <li><a href="#search">Search</a></li>
             <li><a href="#newappeal">New Appeal</a></li>
             <li><a href="#nearby">Nearby</a></li>
-            <li><a href="#search">Search</a></li>
             <li><a href="#watchlist">Watchlist</a></li>
             <li><a href="#settings">Settings</a></li>
         </ul>
+        <div id="mainmenu-footer">
+            <div id="copyright">
+                <p>
+                    ISPAAA 0.1 Prototype<br />
+                    Government of Malaysia
+                </p>
+            </div>
+        </div>
     </div>
-    <div data-role="panel" id="right-panel" data-position-fixed="true" data-position="right" data-display="push">
-        <h1>Messaging</h1>
+    <div data-role="panel" id="right-panel" data-position-fixed="true" data-position="right" data-display="push" data-theme="b">
+        <div id="messaging-header">
+            <div id="messaging-addminusbuttons">
+                <a data-role="button" data-icon="plus" data-iconpos="notext" data-inline="true"></a>
+                <a data-role="button" data-icon="minus" data-iconpos="notext" data-inline="true"></a>
+            </div>
+        </div>
+        <div id="messaging-conversationlist">Fetch conversations from DB</div>
     </div>
     <!-- /PANELS -->
     <!-- PAGES -->
     <div data-role="page" id="nearby">
-        <h1>Nearby</h1>
+        <div class="ui-content" role="main">
+            <h1>Nearby</h1>
+        </div>
+    </div>
+    <div data-role="page" id="search">
+        <div class="ui-content" role="main">
+            <h1>Search</h1>
+        </div>
     </div>
     <div data-role="page" id="newappeal">
-        <h1>New Appeal</h1>
+        <div class="ui-content" role="main">
+            <h1>New Appeal</h1>
+        </div>
     </div>
     <div data-role="page" id="watchlist">
-        <h1>Watchlist</h1>
+        <div class="ui-content" role="main">
+            <h1>Watchlist</h1>
+        </div>
     </div>
     <div data-role="page" id="settings">
         <div class="ui-content" role="main">
-            <ul data-role="listview">
+            <h1>Settings</h1>
+            <ul data-role="listview" data-inset="true">
                 <li><a href="#settings-profile">Profile</a></li>
                 <li><a href="#settings-appinfo">App Info</a></li>
                 <li><a href="#settings-legalinfo">Legal Info</a></li>
@@ -46,16 +79,24 @@
         </div>
     </div>
     <div data-role="page" id="settings-profile">
-        <div class="ui-content" role="main"></div>
+        <div class="ui-content" role="main">
+            <h1>Profile</h1>
+        </div>
     </div>
     <div data-role="page" id="settings-appinfo">
-        <div class="ui-content" role="main"></div>
+        <div class="ui-content" role="main">
+            <h1>App Info</h1>
+        </div>
     </div>
     <div data-role="page" id="settings-legalinfo">
-        <div class="ui-content" role="main"></div>
+        <div class="ui-content" role="main">
+            <h1>Legal Info</h1>
+        </div>
     </div>
-    <div data-role="page" id="settings-language">
-        <div class="ui-content" role="main"></div>
+    <div data-role="page" id="settings-userpref">
+        <div class="ui-content" role="main">
+            <h1>User Preferences</h1>
+        </div>
     </div>
     <!-- /PAGES -->
 </body>

@@ -1,1 +1,22 @@
-﻿
+﻿#mainmenu-header {
+    height: 70px;
+}
+
+#mainmenu-header a {
+    text-decoration: none;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 0;
+    font-size:80%;
+}
+
+#messaging-addminusbuttons {
+    float: right;
+    margin-bottom:10px;
+}
+
+#messaging-conversationlist {
+    clear: both;
+}
