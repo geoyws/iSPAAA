@@ -1,4 +1,4 @@
 iSPAAA
 ======
 
-for Eric Ng
+Client side for the iSPAAA app.
